@@ -1,0 +1,101 @@
+
+@import "../variables.scss";
+
+.main-container{
+    padding-top: 65px;
+}
+/*Footer*/
+footer {
+   margin-top: 30px;
+    background-color: #333;
+  
+    div {
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    @include for-media-size(md) {
+      div {
+        flex-direction: row;
+        align-items: baseline;
+      }
+    }
+  }
+  
+  .copyright {
+    color: #ffffff;
+   
+    margin-top: 15px;
+    letter-spacing: 2px;
+  }
+
+  .footer-menu {
+    padding-left: 0px 15px;
+    list-style: none;
+    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+    justify-content: space-between;
+  
+    &.left {
+      justify-content: flex-start;
+      li {
+        margin-right: 30px;
+      }
+    }
+    &.right {
+      justify-content: flex-end;
+      li {
+        margin-left: 30px;
+      }
+    }
+  
+    li {
+      display: inline-block;
+  
+      a {
+       
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1.6px;
+        opacity: 1;
+        font-size: 14px;
+  
+        &:active,
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+    &.white {
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+      justify-content: center;
+  
+      @include for-media-size(sm) {
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        justify-content: space-around;
+      }
+  
+      li {
+        margin-bottom: 15px;
+        a {
+          color: #ffffff;
+  
+          &:active,
+          &:hover {
+            color: $accent-color;
+          }
+        }
+      }
+      @include for-media-size(sm) {
+        li {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+  

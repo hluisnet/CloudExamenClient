@@ -1,10 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
-@import "@angular/material/_theming.scss";
-@import "@angular/material/prebuilt-themes/indigo-pink.css";
-//@import "~material-icons/iconfont/material-icons.css";
 @import "variables.scss";
- 
+
 html,
 body {
   height: 100%;
@@ -22,10 +17,52 @@ body {
   padding: 8px 8px 8px 0;
 }
 
-.text-right{
+.text-right {
   text-align: right;
 }
 
-.active-menu{
-  background-color:$accent-color !important;
+.active-menu {
+  background-color: $accent-color !important;
+}
+.main-container {
+  padding: 0px 15px;
+
+  h1 {
+    font-family: $title-font-family;
+    font-weight: 500;
+    border-bottom: 1px solid $primary-color;
+    span.title {
+      border-bottom: 5px solid $primary-color;
+
+      padding: 0 10px;
+      color: $primary-color;
+    }
+  }
+}
+
+.success-bg{
+  background-color: $success-color;
+  color:#ffffff;
+}
+.flex-space-between{
+  justify-content: space-between;
+  display: flex;
+}
+button.btn-sm{
+    padding: 0px 10px !important;
+    height: 36px !important;
+  
+}
+
+.flex-container {
+  display: flex;
+  margin: 0 auto;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+
+  @include for-media-size(sm) {
+    max-width: 1200px;
+    flex-flow: row;
+  }
 }

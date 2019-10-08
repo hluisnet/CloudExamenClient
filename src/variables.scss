@@ -1,1 +1,28 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "https://fonts.googleapis.com/css?family=Dosis:300,400,500,700&display=swap";
+
+@import "@angular/material/_theming.scss";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+ 
+
+$primary-color: #3f51b5;
 $accent-color: #ff4081;
+$success-color: #7CB342;
+$gray-color:#3B3C43;
+$title-font-family: 'Dosis', sans-serif;
+
+
+  
+@mixin for-media-size($size) {
+    @if $size == xs {
+      @media (max-width: 599px) { @content; }
+    } @else if $size == sm {
+      @media (min-width: 600px) { @content; }
+    } @else if $size == md {
+      @media (min-width: 900px) { @content; }
+    } @else if $size == lg {
+      @media (min-width: 1200px) { @content; }
+    } @else if $size == xg {
+      @media (min-width: 1800px) { @content; }
+    }
+  }
