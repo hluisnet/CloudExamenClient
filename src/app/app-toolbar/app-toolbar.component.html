@@ -1,0 +1,28 @@
+<mat-toolbar class="mat-elevation-z4 app-toolbar" color="primary">
+        <mat-icon>cloud_circle</mat-icon>
+        <span style="margin-right: 30px">CloudExam</span>
+        
+            <a mat-flat-button color="primary" [routerLink]="['/products']" routerLinkActive="active-menu" >Products</a>
+            <a mat-flat-button color="primary" [routerLink]="['/customers']" routerLinkActive="active-menu">Customers</a>
+            <a mat-flat-button color="primary" [routerLink]="['/orders']" routerLinkActive="active-menu">Orders</a>
+
+        <div>
+                <a [routerLink]="['/cart']" class="button fancy-button"><i class="material-icons">shopping_cart</i>Checkout</a>
+        </div>
+      <!-- <div class="flex-container" style="flex: auto;">
+        <span>Life Flex</span>
+        <span class="fill-space"></span>
+        <ul class="main-menu right" fxShow fxHide.xs="true" fxHide.lg="false">
+          <li> <a href="#">Home</a> </li>
+          <li> <a href="#"></a> </li>
+          <li> <a href="#">Continúa donde lo dejaste</a> </li>
+        </ul>
+        <button mat-icon-button  aria-label="Responsive Menu" fxShow fxHide.xs="false" fxHide.gt-xs="true">
+          <div fxLayout="column" fxLayoutAlign="space-between end">
+            <div class="burger" style="width: 26px"></div>
+            <div class="burger" style="width: 16px"></div>
+            <div class="burger" style="width: 22px"></div>
+          </div>
+        </button>
+      </div>  -->
+    </mat-toolbar>

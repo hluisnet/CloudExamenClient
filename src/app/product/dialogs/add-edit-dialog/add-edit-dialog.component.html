@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Add Customer</h2>
+
+<mat-dialog-content>
+
+    <form [formGroup]="formGroup" class="form">
+
+        <mat-form-field>
+            <input matInput placeholder="Product name" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Product weight" type="number" formControlName="weight">
+            <span matSuffix>Lb</span>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Product price" type="number" formControlName="price">
+            <span matPrefix>$&nbsp;</span>
+
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <textarea matInput placeholder="Product description" formControlName="description"></textarea>
+        </mat-form-field>
+
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"   mat-dialog-close>Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+</mat-dialog-actions>

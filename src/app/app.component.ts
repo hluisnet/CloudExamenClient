@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppToolbarComponent } from './app-toolbar/app-toolbar.component';
 
 @Component({
   selector: 'app-root',
