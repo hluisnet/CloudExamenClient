@@ -1,33 +1,40 @@
-<h2 mat-dialog-title>Add Customer</h2>
+<h2 mat-dialog-title>{{dialogTitle}}</h2>
 
 <mat-dialog-content>
 
-    <form [formGroup]="formGroup" class="form">
+    <form [formGroup]="productForm" class="form">
+        <div class="form-field-container">
+            <mat-form-field>
+                <input matInput placeholder="Product name" formControlName="name">
+            </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Product name" formControlName="name">
-        </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Product weight" type="number" formControlName="weight">
+                <span matSuffix>Lb</span>
+            </mat-form-field>
+        </div>
 
-        <mat-form-field>
-            <input matInput placeholder="Product weight" type="number" formControlName="weight">
-            <span matSuffix>Lb</span>
-        </mat-form-field>
+        <div class="form-field-container">
 
-        <mat-form-field>
-            <input matInput placeholder="Product price" type="number" formControlName="price">
-            <span matPrefix>$&nbsp;</span>
+            <mat-form-field>
+                <input matInput placeholder="Product price" type="number" formControlName="price">
+                <span matPrefix>$&nbsp;</span>
 
-        </mat-form-field>
+            </mat-form-field>
 
 
-        <mat-form-field>
-            <textarea matInput placeholder="Product description" formControlName="description"></textarea>
-        </mat-form-field>
+            <mat-form-field>
+                <textarea matInput placeholder="Product description" formControlName="description"></textarea>
+            </mat-form-field>
 
+        </div>
     </form>
 </mat-dialog-content>
 
-<mat-dialog-actions>
-    <button class="mat-raised-button"   mat-dialog-close>Close</button>
-    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+<mat-dialog-actions dir="rtl" fxLayoutGap="20px" >
+    <button class="mat-raised-button" mat-dialog-close>Close</button>
+    <button class="mat-raised-button mat-primary" *ngIf="action !== 'edit'" (click)="dialogRef.close(productForm)"
+        [disabled]="productForm.invalid">Save</button>
+    <button class="mat-raised-button mat-primary" *ngIf="action === 'edit'"
+        (click)="dialogRef.close(['save', productForm])" [disabled]="productForm.invalid">Save</button>
 </mat-dialog-actions>

@@ -17,9 +17,11 @@ import {
   MatPaginatorModule,
   MatCheckboxModule,
   MatDialogModule,
+  MatSnackBarModule,
  
   } from '@angular/material';
 import { AddEditDialogComponent } from './dialogs/add-edit-dialog/add-edit-dialog.component';
+import { ConfirmDialogModule } from '../components/confirm-dialog/confirm-dialog.module';
 
 
 
@@ -38,8 +40,10 @@ import { AddEditDialogComponent } from './dialogs/add-edit-dialog/add-edit-dialo
     MatPaginatorModule,
     MatCheckboxModule,
     MatDialogModule,
+    MatSnackBarModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ConfirmDialogModule
   ],
   entryComponents: [
     AddEditDialogComponent

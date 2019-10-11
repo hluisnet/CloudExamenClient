@@ -18,38 +18,46 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { AppToolbarComponent } from './app-toolbar/app-toolbar.component';
 import { MatPaginatorModule, MatButtonModule } from '@angular/material';
+import { ProductResolver } from './product/product.resolver';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'products', component: ProductListComponent }
+  {
+    path: 'products',
+    component: ProductListComponent,
+    resolve: {
+      product: ProductResolver
+    }
+  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     AppToolbarComponent
-    
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     DashboardModule,
     ProductModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatIconModule,     
-    MatCheckboxModule,MatButtonModule
-    
+    MatIconModule,
+    MatCheckboxModule,
+    MatButtonModule
   ],
-  providers: [],
+  providers: [ProductResolver],
   bootstrap: [AppComponent],
   exports: [
     MatToolbarModule,
     AppToolbarComponent,
-    MatIconModule,MatButtonModule
-     
-    
+    MatIconModule, MatButtonModule
+
   ]
 })
 export class AppModule { }
